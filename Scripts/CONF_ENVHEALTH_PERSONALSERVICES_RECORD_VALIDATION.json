@@ -8,7 +8,6 @@
         },
         "preScript": "",
         "criteria": {
-		  "disabled": true,
           "task": [
             "Permit Issuance"
           ],
