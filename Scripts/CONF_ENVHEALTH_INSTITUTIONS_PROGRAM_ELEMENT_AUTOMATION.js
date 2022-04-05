@@ -1,0 +1,272 @@
+{
+	"EnvHealth/Institutions/Residential Care/Permit": {
+		"WorkflowTaskUpdateAfter": [
+			{
+				"metadata": {
+					"description": "To automate the fee by program element",
+					"operators": {}
+				},
+				"preScript": "",
+				"criteria": {
+					"task": [
+						"Permit Status"
+					],
+					"status": [
+						"Invoice Fees"
+					]
+				},
+				"action": {
+					"assessFees": {
+						"feeSchedule": "EH_RESIDENTIAL_CARE",
+						"feeQuantity": 1,
+						"feeInvoice": "Y",
+						"feePeriod": "FINAL"
+					}
+				}
+			}
+		],
+		"AnnualRenewal": [
+			{
+				"metadata": {
+					"description": "To assess and invoice the fees when sending notifications",
+					"operators": {}
+				},
+				"criteria": {},
+				"preScript": "",
+				"action": {
+					"assessFees": {
+						"feeSchedule": "EH_RESIDENTIAL_CARE",
+						"feeQuantity": 1,
+						"feeInvoice": "Y",
+						"feePeriod": "FINAL"
+					}
+				}
+			}
+		]
+	},
+	"EnvHealth/Institutions/Correctional Facility/Permit": {
+		"WorkflowTaskUpdateAfter": [
+			{
+				"metadata": {
+					"description": "To automate the fee by program element",
+					"operators": {}
+				},
+				"preScript": "",
+				"criteria": {
+					"task": [
+						"Permit Status"
+					],
+					"status": [
+						"Invoice Fees"
+					]
+				},
+				"action": {
+					"assessFees": {
+						"feeSchedule": "EH_CORRECTIONAL_FACILITY",
+						"feeQuantity": 1,
+						"feeInvoice": "Y",
+						"feePeriod": "FINAL"
+					}
+				}
+			}
+		],
+		"AnnualRenewal": [
+			{
+				"metadata": {
+					"description": "To assess and invoice the fees when sending notifications",
+					"operators": {}
+				},
+				"criteria": {},
+				"preScript": "",
+				"action": {
+					"assessFees": {
+						"feeSchedule": "EH_CORRECTIONAL_FACILITY",
+						"feeQuantity": 1,
+						"feeInvoice": "Y",
+						"feePeriod": "FINAL"
+					}
+				}
+			}
+		]
+	},
+	"EnvHealth/Institutions/Child Day Care/Permit": {
+		"WorkflowTaskUpdateAfter": [
+			{
+				"metadata": {
+					"description": "To automate the fee by program element",
+					"operators": {}
+				},
+				"preScript": "",
+				"criteria": {
+					"task": [
+						"Permit Status"
+					],
+					"status": [
+						"Invoice Fees"
+					]
+				},
+				"action": {
+					"assessFees": {
+						"feeSchedule": "EH_CHILD_DAY_CARE",
+						"feeQuantity": 1,
+						"feeInvoice": "Y",
+						"feePeriod": "FINAL"
+					}
+				}
+			}
+		],
+		"AnnualRenewal": [
+			{
+				"metadata": {
+					"description": "To assess and invoice the fees when sending notifications",
+					"operators": {}
+				},
+				"criteria": {},
+				"preScript": "",
+				"action": {
+					"assessFees": {
+						"feeSchedule": "EH_CHILD_DAY_CARE",
+						"feeQuantity": 1,
+						"feeInvoice": "Y",
+						"feePeriod": "FINAL"
+					}
+				}
+			}
+		]
+	},
+	"EnvHealth/Institutions/Educational Building/Permit": {
+		"WorkflowTaskUpdateAfter": [
+			{
+				"metadata": {
+					"description": "To automate the fee by program element",
+					"operators": {}
+				},
+				"preScript": "",
+				"criteria": {
+					"task": [
+						"Permit Status"
+					],
+					"status": [
+						"Invoice Fees"
+					]
+				},
+				"action": {
+					"assessFees": {
+						"feeSchedule": "EH_EDUCATIONAL_BUILDING",
+						"feeQuantity": 1,
+						"feeInvoice": "Y",
+						"feePeriod": "FINAL"
+					}
+				}
+			}
+		],
+		"AnnualRenewal": [
+			{
+				"metadata": {
+					"description": "To assess and invoice the fees when sending notifications",
+					"operators": {}
+				},
+				"criteria": {},
+				"preScript": "",
+				"action": {
+					"assessFees": {
+						"feeSchedule": "EH_EDUCATIONAL_BUILDING",
+						"feeQuantity": 1,
+						"feeInvoice": "Y",
+						"feePeriod": "FINAL"
+					}
+				}
+			}
+		]
+	},
+	"EnvHealth/Institutions/Nursing Home/Permit": {
+		"WorkflowTaskUpdateAfter": [
+			{
+				"metadata": {
+					"description": "To automate the fee by program element",
+					"operators": {}
+				},
+				"preScript": "",
+				"criteria": {
+					"task": [
+						"Permit Status"
+					],
+					"status": [
+						"Invoice Fees"
+					]
+				},
+				"action": {
+					"assessFees": {
+						"feeSchedule": "EH_NURSING_HOME",
+						"feeQuantity": 1,
+						"feeInvoice": "Y",
+						"feePeriod": "FINAL"
+					}
+				}
+			}
+		],
+		"AnnualRenewal": [
+			{
+				"metadata": {
+					"description": "To assess and invoice the fees when sending notifications",
+					"operators": {}
+				},
+				"criteria": {},
+				"preScript": "",
+				"action": {
+					"assessFees": {
+						"feeSchedule": "EH_NURSING_HOME",
+						"feeQuantity": 1,
+						"feeInvoice": "Y",
+						"feePeriod": "FINAL"
+					}
+				}
+			}
+		]
+	},
+	"EnvHealth/Institutions/Adult Day Care/Permit": {
+		"WorkflowTaskUpdateAfter": [
+			{
+				"metadata": {
+					"description": "To automate the fee by program element",
+					"operators": {}
+				},
+				"preScript": "",
+				"criteria": {
+					"task": [
+						"Permit Status"
+					],
+					"status": [
+						"Invoice Fees"
+					]
+				},
+				"action": {
+					"assessFees": {
+						"feeSchedule": "EH_ADULT_DAY_CARE",
+						"feeQuantity": 1,
+						"feeInvoice": "Y",
+						"feePeriod": "FINAL"
+					}
+				}
+			}
+		],
+		"AnnualRenewal": [
+			{
+				"metadata": {
+					"description": "To assess and invoice the fees when sending notifications",
+					"operators": {}
+				},
+				"criteria": {},
+				"preScript": "",
+				"action": {
+					"assessFees": {
+						"feeSchedule": "EH_ADULT_DAY_CARE",
+						"feeQuantity": 1,
+						"feeInvoice": "Y",
+						"feePeriod": "FINAL"
+					}
+				}
+			}
+		]
+	},
+}
