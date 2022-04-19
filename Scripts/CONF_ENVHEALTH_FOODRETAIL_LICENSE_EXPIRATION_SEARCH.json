@@ -2,18 +2,18 @@
   "aboutToExpireSearchRules": {
     "searchCriteria": {
       "searchByRecordGroup":"EnvHealth",
-      "searchByRecordType":"Rec Health",
+      "searchByRecordType":"Food Retail",
       "searchByRecordSubType":"*",
       "searchByRecordCategory":"Permit",
       "searchStatus": "Active",
-      "searchByDaysOut": 45,
+      "searchByDaysOut": 50,
       "searchByFromDate": false,
       "searchByToDate": false,
       "expiringInterval":"nextquarter",
-      "notificationConfScript":"CONF_ENVHEALTH_RECHEALTH_LICENSE_EXPIRATION_NOTICE",
+      "notificationConfScript":"CONF_ENVHEALTH_FOODRETAIL_LICENSE_EXPIRATION_NOTICE",
       "firstNotice": "45 Day Notice",
       "excludeRecordType": [{
-          "type": "Licenses/Type/Subtype/Category"
+          "type": "EnvHealth/Land Use/Septic/Permit"
         },
         {
           "type": "Licenses/Type/Subtype/Category"
@@ -26,21 +26,21 @@
           "status": "Closed"
         }
       ],
-"adminEmail": "",
-"batchResultEmailTemplate": "BATCH_LICENSE_RENEWAL_RESULTS"
+      "adminEmail": "michael.zachry@scubeenterprise.com",
+      "batchResultEmailTemplate": "BATCH_LICENSE_RENEWAL_RESULTS"
     }
   },
   "expirationNoticeSearchRules": {
     "searchCriteria": {
       "searchByRecordGroup": "EnvHealth",
-      "searchByRecordType": "Rec Health",
+      "searchByRecordType": "Food Retail",
       "searchByRecordSubType": "*",
       "searchByRecordCategory": "Permit",
       "searchByRecordStatus": "",
       "searchByDaysOut": 1,
       "searchByFromDate": false,
       "searchByToDate": false,
-      "notificationConfScript": "CONF_ENVHEALTH_RECHEALTH_LICENSE_EXPIRATION_NOTICE",
+      "notificationConfScript": "CONF_ENVHEALTH_FOODRETAIL_LICENSE_EXPIRATION_NOTICE",
       "excludeRecordType": [],
       "excludeRecordStatus": [
         {
@@ -50,8 +50,8 @@
           "status": "Closed"
         }
       ],
-  "adminEmail": "",
-  "batchResultEmailTemplate": "BATCH_LICENSE_RENEWAL_RESULTS"
+      "adminEmail": "",
+      "batchResultEmailTemplate": "BATCH_LICENSE_RENEWAL_RESULTS_turned_off"
     }
   }
 }

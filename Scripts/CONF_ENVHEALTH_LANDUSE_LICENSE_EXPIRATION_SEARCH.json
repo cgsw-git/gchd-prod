@@ -2,15 +2,15 @@
   "aboutToExpireSearchRules": {
     "searchCriteria": {
       "searchByRecordGroup":"EnvHealth",
-      "searchByRecordType":"Institutions",
+      "searchByRecordType":"Land Use",
       "searchByRecordSubType":"*",
       "searchByRecordCategory":"Permit",
-      "searchStatus": "Active",
-      "searchByDaysOut": 45,
+      "searchStatus": "Active Maintenance",
+      "searchByDaysOut": 50,
       "searchByFromDate": false,
       "searchByToDate": false,
       "expiringInterval":"nextquarter",
-      "notificationConfScript":"CONF_ENVHEALTH_INSTITUTIONS_LICENSE_EXPIRATION_NOTICE",
+      "notificationConfScript":"CONF_ENVHEALTH_LANDUSE_LICENSE_EXPIRATION_NOTICE",
       "firstNotice": "45 Day Notice",
       "excludeRecordType": [{
           "type": "Licenses/Type/Subtype/Category"
@@ -33,14 +33,14 @@
   "expirationNoticeSearchRules": {
     "searchCriteria": {
       "searchByRecordGroup": "EnvHealth",
-      "searchByRecordType": "Institutions",
+      "searchByRecordType": "Land Use",
       "searchByRecordSubType": "*",
       "searchByRecordCategory": "Permit",
       "searchByRecordStatus": "",
       "searchByDaysOut": 1,
       "searchByFromDate": false,
       "searchByToDate": false,
-      "notificationConfScript": "CONF_ENVHEALTH_INSTITUTIONS_LICENSE_EXPIRATION_NOTICE",
+      "notificationConfScript": "CONF_ENVHEALTH_LANDUSE_LICENSE_EXPIRATION_NOTICE",
       "excludeRecordType": [],
       "excludeRecordStatus": [
         {
