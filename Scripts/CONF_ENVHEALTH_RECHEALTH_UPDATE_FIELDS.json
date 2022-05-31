@@ -25,6 +25,25 @@
         "postScript": ""
       }
 	  
+    ],
+    "PaymentReceiveAfter": [
+	  {
+        "metadata": {
+          "description": "Update Expiration Status",
+          "operators": {}
+        },
+        "criteria": {
+          "balanceAllowed": false,
+		  "customFields": {
+          }
+        },
+        "preScript": "",
+		"action": {
+          "updateExpirationStatus": "About to Expire"
+        },
+        "postScript": ""
+      }
+	  
     ]
   }
 }
