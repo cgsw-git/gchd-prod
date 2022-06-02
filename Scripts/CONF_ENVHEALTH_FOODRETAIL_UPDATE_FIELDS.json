@@ -20,7 +20,7 @@
        "action": {
               "updateExpirationStatus": "Inactive"
           },
-        "postScript": ""
+        "postScript": "clearPermitNotificationInfo"
       }
     ],
     "PaymentReceiveAfter": [
@@ -30,15 +30,36 @@
           "operators": {}
         },
         "criteria": {
-          "balanceAllowed": false,
+		  "allowBalance": false,
+		  "chkInvoicedFees": true,
 		  "customFields": {
           }
         },
         "preScript": "",
 		"action": {
-              "updateExpirationStatus": "About to Expire"
+          "updateExpirationStatus": "About to Expire"
         },
-        "postScript": ""
+        "postScript": "clearPermitNotificationInfo"
+      }
+	  
+    ],
+    "PaymentApplyAfter": [
+	  {
+        "metadata": {
+          "description": "Update Expiration Status",
+          "operators": {}
+        },
+        "criteria": {
+		  "allowBalance": false,
+		  "chkInvoicedFees": true,
+		  "customFields": {
+          }
+        },
+        "preScript": "",
+		"action": {
+          "updateExpirationStatus": "About to Expire"
+        },
+        "postScript": "clearPermitNotificationInfo"
       }
 	  
     ]

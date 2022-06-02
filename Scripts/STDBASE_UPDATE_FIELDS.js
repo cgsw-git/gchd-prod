@@ -68,6 +68,8 @@ Description : JSON Example :
 Note : for the source name when the value source is standard comments then the source name should be "comment type/comment ID"
 and when the source is standard choice the source name will be standard choice / standard choice value.
 
+Added optional checking for allowBalance
+
  */
 
 try {
@@ -99,10 +101,10 @@ try {
 			continue;
 		}
 
-		UpdateFields(rules.action);
+		var mresult = UpdateFields(rules);
 
 		//run post script
-		if (!isEmptyOrNull(postScript)) {
+		if (!isEmptyOrNull(postScript) && mresult) {
 			eval(getScriptText(postScript, null, false));
 		}
 	}
@@ -116,16 +118,35 @@ try {
  */
 function UpdateFields(rules) {
 	
-	var daysOut = rules.daysOut;
-	var valueSource = rules.valueSource;
-	var customListToUpdate = rules.customListToUpdate;
-	var asitSearchColumn = rules.asitSearchColumn;
-	var sourceName = rules.sourceName;
-	var updateAppName = rules.updateAppName;
+	var daysOut = rules.action.daysOut;
+	var valueSource = rules.action.valueSource;
+	var customListToUpdate = rules.action.customListToUpdate;
+	var asitSearchColumn = rules.action.asitSearchColumn;
+	var sourceName = rules.action.sourceName;
+	var updateAppName = rules.action.updateAppName;
 	var newValue = null;
 	
 
-	var expirationStatus =rules.updateExpirationStatus ;
+	// this to  check if the record has balance or not.
+	if (!isEmptyOrNull(rules.criteria.allowBalance) && rules.criteria.allowBalance == false) {
+		var capDetails = aa.cap.getCapDetail(capId).getOutput();
+		if (capDetails.getBalance() > 0) {
+			logDebug("permit has an outstanding balance");
+			return false;
+		}else{
+			if (rules.criteria.chkInvoicedFees) {
+				var feesArr = loadFees(capId);
+				for ( var i in feesArr) {
+					if (feesArr[i].status == "NEW") {
+						logDebug("permit has assessed fees");
+						return false;
+					}
+				}
+			}
+		}
+	}
+
+	var expirationStatus =rules.action.updateExpirationStatus ;
 	if (!isEmptyOrNull(expirationStatus))
 		{
 		var rB1ExpResult = aa.expiration.getLicensesByCapID(capId).getOutput();
@@ -192,11 +213,11 @@ function UpdateFields(rules) {
 
 	//update field with new value
 	if (newValue != null) {
-		if (rules.customFieldToUpdate != null && rules.customFieldToUpdate != "") {
-			editAppSpecific(rules.customFieldToUpdate, newValue);
+		if (rules.action.customFieldToUpdate != null && rules.action.customFieldToUpdate != "") {
+			editAppSpecific(rules.action.customFieldToUpdate, newValue);
 		}
-		if (rules.customListToUpdate != null && rules.customListToUpdate != "") {
-			UpdateAsitTableColumn(rules.customListToUpdate, newValue)
+		if (rules.action.customListToUpdate != null && rules.action.customListToUpdate != "") {
+			UpdateAsitTableColumn(rules.action.customListToUpdate, newValue)
 		}
 	}
 
@@ -286,7 +307,7 @@ function UpdateFields(rules) {
 		editAppName(vNewAppName,itemCap);		
 
 	}
-
+return true;
 }
 
 function customListColumnUpdateLocal(capIDModel, tableName, searchColumnName, searchValue, columnToUpdate, valueToUpdate) {
@@ -379,8 +400,8 @@ function customListColumnUpdateLocal(capIDModel, tableName, searchColumnName, se
  * @returns
  */
 function getNewValue(rules) {
-	var valueSource = rules.valueSource;
-	var sourceName = rules.sourceName;
+	var valueSource = rules.action.valueSource;
+	var sourceName = rules.action.sourceName;
 	if (valueSource && valueSource.trim() == "") {
 		return sourceName;
 	} else if (valueSource == "Standard Choice") {
