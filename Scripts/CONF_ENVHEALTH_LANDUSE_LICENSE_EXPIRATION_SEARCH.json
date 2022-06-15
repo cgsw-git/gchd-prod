@@ -7,7 +7,7 @@
       "searchByRecordCategory":"Permit",
       "searchStatus": "Active",
       "searchByDaysOut": 50,
-      "searchByFromDate": "04/01/2022",
+      "searchByFromDate": false,
       "searchByToDate": false,
       "expiringInterval":"nextquarter",
       "notificationConfScript":"CONF_ENVHEALTH_LANDUSE_LICENSE_EXPIRATION_NOTICE",
